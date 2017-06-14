@@ -1,0 +1,108 @@
+body {
+    background-color: white;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+h1 {
+    background-image: url(logo.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 58px;
+    color: #bfbfbf;
+    margin: 20px;
+    border-bottom: 1px solid #bfbfbf;
+    padding: 5px;
+    padding-left: 85px;
+}
+
+#base {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    text-align: center;
+}
+
+#display {
+    margin-top: 20px;
+    width: 383px;
+    border: 1px solid #cccccc;
+    padding: 7px;
+    color: #4d4d4d;
+    font-size: 28px;
+    text-align: right;
+}
+
+#display p {
+    margin: 0px;
+    color: #808080;
+}
+
+button {
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    width: 96px;
+    background-color: #e6e6e6;
+    padding: 10px;
+    color:  #808080;
+    font-size: 18px;
+}
+
+button:hover {
+    border-color: #b3b3b3;
+    background-color: #e9e9e9;
+    color:  #4d4d4d;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.strongbutton {
+    border-color: #a6a6a6;
+    background-color: #cccccc;
+}
+
+.strongbutton:hover {
+    border-color: #8c8c8c;
+    background-color: #cfcfcf;
+    color:  #595959;
+}
+
+#clear:active {
+    border-color: #ff3300;
+    background-color: #ff5c33;
+    color:  black;
+}
+
+#result {
+    border-color: #0080ff;
+    background-color: #4da6ff;
+    font-weight: bold;
+    color: white;
+}
+
+#result:hover {
+    border-color: #0073e6;
+    background-color: #3399ff;
+    font-weight: bold;
+    color: white;
+}
+
+button:active, #result:active, .strongbutton:active {
+    border-color: #4da6ff;
+    background-color: #80bfff;
+}
+
+footer {
+    margin: 50px 20px 0 20px;
+    text-align: right;
+    font-weight: bold;
+    color: #bfbfbf;
+    border-top: 1px solid #bfbfbf;    
+}
