@@ -93,7 +93,14 @@ document.getElementById("result").onclick = function(){
     if (!content.includes(".")) {
         float = false;
     }
-    display(content);
+    if (content == "NaN" || content == "Infinity" ) {
+        content = "0";
+        result = "ERROR";
+        display(result);
+    }
+    else {
+        display(content);
+    }
 }
 
 // thank you for reading :)
