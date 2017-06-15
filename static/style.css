@@ -59,7 +59,7 @@ button:focus {
     outline: 0;
 }
 
-.operator, #clear, #neg {
+.operator, #clear, #undo {
     border-color: #a6a6a6;
     background-color: #cccccc;
 }
@@ -90,7 +90,7 @@ button:focus {
     color: white;
 }
 
-button:active, #result:active, #neg:active, .operator:active {
+button:active, #result:active, #undo:active, .operator:active {
     border-color: #4da6ff;
     background-color: #80bfff;
 }
