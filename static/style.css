@@ -33,14 +33,9 @@ h1 {
     width: 383px;
     border: 1px solid #cccccc;
     padding: 7px;
-    color: #4d4d4d;
+    color: #808080;
     font-size: 28px;
     text-align: right;
-}
-
-#display p {
-    margin: 0px;
-    color: #808080;
 }
 
 button {
@@ -63,12 +58,12 @@ button:focus {
     outline: 0;
 }
 
-.strongbutton {
+.operator, #clear, #neg {
     border-color: #a6a6a6;
     background-color: #cccccc;
 }
 
-.strongbutton:hover {
+.operator:hover {
     border-color: #8c8c8c;
     background-color: #cfcfcf;
     color:  #595959;
@@ -94,7 +89,7 @@ button:focus {
     color: white;
 }
 
-button:active, #result:active, .strongbutton:active {
+button:active, #result:active, #neg:active, .operator:active {
     border-color: #4da6ff;
     background-color: #80bfff;
 }
