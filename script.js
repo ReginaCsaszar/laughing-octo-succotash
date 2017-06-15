@@ -90,12 +90,15 @@ document.getElementById("result").onclick = function(){
     var result = content.replace(/x/g, '*').replace(/÷/g, '/');
     result = eval(result);
     content = String(result);
-    if (!content.includes(".")) {
+    if (content.includes(".")) {
+        float = true;
+    }
+    else {
         float = false;
     }
     if (content == "NaN" || content == "Infinity" ) {
         content = "0";
-        result = "ERROR";
+        result = "WAT?!";
         display(result);
     }
     else {
