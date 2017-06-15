@@ -1,7 +1,3 @@
-
-//document.getElementById("undo")
-//document.getElementById("result")
-
 var content = "0";
 var numbers = document.getElementsByClassName("number");
 var operators = document.getElementsByClassName("operator");
@@ -19,7 +15,7 @@ var display = function(chars) {
     document.getElementById("display").innerHTML = info;
 };
 
-var isOperator = function(chars) {
+var checkOperator = function(chars) {
 // check if last char is operator
     var operatorArray = ["%", "÷", "x", "-", "+", "."];
     var lastChar = chars.slice(-1);
@@ -32,11 +28,11 @@ var isOperator = function(chars) {
 for (i = 0; i < numbers.length; i++) {
 // handle number buttons
     numbers[i].onclick = function() {
-        if (content === "0") {
+        if (content == "0") {
             content = "";
         }
         content = content + this.innerHTML;
-        if (content === "00") {
+        if (content == "00") {
         content = "0";
         }
         display(content);
@@ -46,7 +42,7 @@ for (i = 0; i < numbers.length; i++) {
 for (i = 0; i < operators.length; i++) {
 // handle operator buttons
     operators[i].onclick = function() {
-        if (isOperator(content)) {
+        if (checkOperator(content)) {
             content = content.slice(0, -1);
         }
         content = content + this.innerHTML;
@@ -58,7 +54,7 @@ for (i = 0; i < operators.length; i++) {
 document.getElementById("dot").onclick = function(){
 // handle dot button
     if (!float) {
-        if (isOperator(content)) {
+        if (checkOperator(content)) {
             content = content + "0";
         }
         content = content + ".";
@@ -69,11 +65,11 @@ document.getElementById("dot").onclick = function(){
 
 document.getElementById("undo").onclick = function(){
 // handle CE button
-    if (content.slice(-1) === ".") {
+    if (content.slice(-1) == ".") {
         float = false;
     }
     content = content.slice(0, -1);
-    if (content === "") {
+    if (content == "") {
         content = "0";
     }
     display(content);
@@ -85,3 +81,19 @@ document.getElementById("clear").onclick = function(){
     float = false;
     display(content);
 }
+
+document.getElementById("result").onclick = function(){
+// handle = button
+    if (checkOperator(content)) {
+            content = content.slice(0, -1);
+    }
+    var result = content.replace(/x/g, '*').replace(/÷/g, '/');
+    result = eval(result);
+    content = String(result);
+    if (!content.includes(".")) {
+        float = false;
+    }
+    display(content);
+}
+
+// thank you for reading :)
