@@ -13,7 +13,7 @@ var display = function(chars) {
         info = chars;
     }
     document.getElementById("display").innerHTML = info;
-};
+}
 
 var checkOperator = function(chars) {
 // check if last char is operator
@@ -23,7 +23,7 @@ var checkOperator = function(chars) {
         return true;
     }
     return false;
-};
+}
 
 for (i = 0; i < numbers.length; i++) {
 // handle number buttons
