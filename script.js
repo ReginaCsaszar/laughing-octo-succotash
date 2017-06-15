@@ -8,6 +8,13 @@ var numbers = document.getElementsByClassName("number");
 var operators = document.getElementsByClassName("operator");
 var i;
 
+var display = function(info) {
+    if (info.length > 25) {
+        info = info.slice(-25);
+    }
+    document.getElementById("display").innerHTML = info;
+};
+
 var removeLastOperator = function(chars) {
     var operatorArray = ["%", "÷", "x", "-", "+"];
     var lastChar = chars.slice(-1);
@@ -26,7 +33,7 @@ for (i = 0; i < numbers.length; i++) {
         if (content === "00") {
             content = "0";
         }
-        document.getElementById("display").innerHTML = content;
+        display(content);
     }
 }
 
@@ -36,11 +43,11 @@ for (i = 0; i < operators.length; i++) {
             content = removeLastOperator(content);
             content = content + this.innerHTML;
         }
-        document.getElementById("display").innerHTML = content;
+        display(content);
     }
 }
 
 document.getElementById("clear").onclick = function(){
     content = "0";
-    document.getElementById("display").innerHTML = content;
+    display(content);
 }
